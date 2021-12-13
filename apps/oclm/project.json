@@ -1,0 +1,69 @@
+{
+  "root": "apps/oclm",
+  "sourceRoot": "apps/oclm/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/oclm",
+        "index": "apps/oclm/src/index.html",
+        "baseHref": "/",
+        "main": "apps/oclm/src/main.tsx",
+        "polyfills": "apps/oclm/src/polyfills.ts",
+        "tsConfig": "apps/oclm/tsconfig.app.json",
+        "assets": ["apps/oclm/src/favicon.ico", "apps/oclm/src/assets"],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/oclm/src/environments/environment.ts",
+              "with": "apps/oclm/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "oclm:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "oclm:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/oclm/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/oclm"],
+      "options": {
+        "jestConfig": "apps/oclm/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

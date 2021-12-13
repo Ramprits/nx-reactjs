@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "oclm": "apps/oclm",
+    "oclm-e2e": "apps/oclm-e2e"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "root": "apps/oclm-e2e",
+  "sourceRoot": "apps/oclm-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/oclm-e2e/cypress.json",
+        "devServerTarget": "oclm:serve",
+        "tsConfig": "apps/oclm-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "oclm:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/oclm-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["oclm"]
+}
