@@ -1,18 +1,8 @@
-import styled from '@emotion/styled';
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
+import { Header } from '@my-org/oclm/shared-ui';
 
-/* eslint-disable-next-line */
-export interface HomeProps {}
-
-const StyledHome = styled.div`
-  color: pink;
-`;
-
-export function Home(props: HomeProps) {
-  return (
-    <StyledHome>
-      <h1>Welcome to Home!</h1>
-    </StyledHome>
-  );
+export function Home() {
+  return <Header />;
 }
 
 export default Home;

@@ -1,0 +1,23 @@
+{
+  "root": "libs/oclm/shared-ui",
+  "sourceRoot": "libs/oclm/shared-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/oclm/shared-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/oclm/shared-ui"],
+      "options": {
+        "jestConfig": "libs/oclm/shared-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
