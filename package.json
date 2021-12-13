@@ -11,9 +11,12 @@
   "dependencies": {
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
+    "@reduxjs/toolkit": "1.6.2",
     "core-js": "^3.6.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "7.2.5",
+    "react-router-dom": "^6.1.1",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.0.0"
   },
@@ -34,6 +37,7 @@
     "@types/node": "14.14.33",
     "@types/react": "17.0.30",
     "@types/react-dom": "17.0.9",
+    "@types/react-router-dom": "5.3.1",
     "@typescript-eslint/eslint-plugin": "~4.33.0",
     "@typescript-eslint/parser": "~4.33.0",
     "babel-jest": "27.2.3",
